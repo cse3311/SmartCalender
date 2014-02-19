@@ -1,0 +1,110 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<LinearLayout
+		android:id="@+id/buttons"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:orientation="horizontal"
+		android:background="#656565"
+		android:padding="5dp">
+
+		<Button
+		    android:id="@+id/button_save"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="2"
+		    android:text="@string/event_cancel_button" />
+
+		<Button
+		    android:id="@+id/button_cancel"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="2"
+		    android:text="@string/event_add_button" />
+
+	</LinearLayout>
+	<ScrollView
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:layout_alignParentTop="true"
+		android:layout_above="@id/buttons">
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:paddingBottom="5dp"
+			android:paddingLeft="5dp"
+			android:paddingRight="5dp">
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:paddingTop="5dp">
+
+				<TextView
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:text="@string/event_name" />
+
+				<EditText android:id="@+id/text_eventname" 
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content" android:inputType="text"/>
+			</LinearLayout>
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:paddingTop="5dp">
+
+				<TextView
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:text="@string/event_location" />
+
+				<EditText android:id="@+id/text_eventlocation" 
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content" android:inputType="text"/>
+			</LinearLayout>
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:paddingTop="5dp">
+
+				<TextView
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:text="@string/event_date" />
+
+				
+			</LinearLayout>
+
+			<LinearLayout
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:orientation="vertical"
+			    android:paddingTop="5dp" >
+
+			    <DatePicker
+			        android:id="@+id/datePicker1"
+			        android:layout_width="wrap_content"
+			        android:layout_height="250dp"
+			         />
+			</LinearLayout>
+
+			<TextView
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:text="@string/event_time" />
+
+			<TimePicker
+			    android:id="@+id/timePicker1"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content" />
+
+		</LinearLayout>
+	</ScrollView>
+</RelativeLayout>

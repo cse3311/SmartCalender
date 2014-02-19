@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SmartCalender</string>
+    <string name="action_settings">Settings</string>
+    
+    <string name="event_form_title">Add Event</string>
+    <string name="event_name">Event Name: </string>
+    <string name="text_eventname"></string>
+    <string name="event_time">Event Time: </string>
+    <string name="event_date">Event Date: </string>
+    <string name="event_location">Event Location: </string>
+    <string name="event_add_button">Add Event</string>
+    <string name="event_cancel_button">Cancel</string>
+    <string name="event_deleted">Event Deleted Successfully</string>
+    <string name="event_added">Event Added Successfully</string>
+    <string name="cancel">Cancel</string>
+    
+
+</resources>
