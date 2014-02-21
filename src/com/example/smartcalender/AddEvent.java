@@ -25,6 +25,7 @@ public class AddEvent extends Activity {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_event);
+		setTitle("Add Event");
 		
 		text_eventname = (EditText) findViewById(R.id.text_eventname);
 		text_eventlocation = (EditText) findViewById(R.id.text_eventlocation);
@@ -66,6 +67,7 @@ public class AddEvent extends Activity {
 	private void callSmartCalender(View view) {
 		Intent theIntent = new Intent(getApplication(), SmartCalender.class);
 		startActivity(theIntent);
+		
 	}	
 
 }

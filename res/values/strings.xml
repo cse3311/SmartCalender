@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">SmartCalender</string>
+    <string name="app_name">Home - SmartCalender</string>
+    <string name="edit_event">Edit Event</string>
+    <string name="add_event">Add Event</string>
     <string name="action_settings">Settings</string>
     
     <string name="event_form_title">Add Event</string>
