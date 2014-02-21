@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.View;
 
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class AddEvent extends Activity {
 	
@@ -59,13 +60,15 @@ public class AddEvent extends Activity {
 		
 		calenderdb.insertEvents(queryValuesMap);
 		
+		Toast.makeText(getApplicationContext(), "Event Added Succesfully", Toast.LENGTH_SHORT).show();
+		
 		// Call for MainActivity to execute
 		
 		this.callSmartCalender(view);
 	}
 
 	private void callSmartCalender(View view) {
-		Intent theIntent = new Intent(getApplication(), SmartCalender.class);
+		Intent theIntent = new Intent(getApplication(), ListEvent.class);
 		startActivity(theIntent);
 		
 	}	

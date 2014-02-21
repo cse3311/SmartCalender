@@ -8,6 +8,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 
 public class CalenderDB extends SQLiteOpenHelper{
@@ -66,6 +67,8 @@ public class CalenderDB extends SQLiteOpenHelper{
 			database.close();
 		}
 		
+		
+
 		public int updateEvents(HashMap<String, String> queryValues) {
 			
 			// Open a database for reading and writing

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.CalendarView;
 import android.widget.CalendarView.OnDateChangeListener;
@@ -19,7 +20,7 @@ public class SmartCalender extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_smart_calender);
-		
+		setTitle("Home");
 		cal = (CalendarView) findViewById(R.id.calendarView1);
         
         cal.setOnDateChangeListener(new OnDateChangeListener() {
@@ -44,7 +45,14 @@ public class SmartCalender extends Activity {
 	}
 	
 	public void showAddEvent(View view) {
+		
 		Intent theIntent = new Intent(this, AddEvent.class);
+		startActivity(theIntent);
+	}
+	
+	public void showListEvent(View view) {
+		
+		Intent theIntent = new Intent(this, ListEvent.class);
 		startActivity(theIntent);
 	}
 	
