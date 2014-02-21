@@ -16,14 +16,14 @@
 				    android:visibility="gone" />
 
 		<Button
-		    android:id="@+id/button_save"
+		    android:id="@+id/button_cancel"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:layout_weight="2"
 		    android:text="@string/event_cancel_button" />
 
 		<Button
-		    android:id="@+id/button_cancel"
+		    android:id="@+id/button_save"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:layout_weight="2"
@@ -84,6 +84,14 @@
 				    android:layout_width="fill_parent"
 				    android:layout_height="wrap_content"
 				    android:text="@string/event_date" />
+				
+				<EditText android:id="@+id/text_eventdate" 
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content" 
+					android:inputType="date"/>
+
+			    
+			
 
 				
 			</LinearLayout>
@@ -93,23 +101,19 @@
 			    android:layout_height="wrap_content"
 			    android:orientation="vertical"
 			    android:paddingTop="5dp" >
-
-			    <DatePicker
-			        android:id="@+id/datePicker1"
-			        android:layout_width="wrap_content"
-			        android:layout_height="250dp"
-			         />
 			</LinearLayout>
 
+			
+			
 			<TextView
 			    android:layout_width="fill_parent"
 			    android:layout_height="wrap_content"
 			    android:text="@string/event_time" />
-
-			<TimePicker
-			    android:id="@+id/timePicker1"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content" />
+			
+			<EditText android:id="@+id/text_eventtime" 
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content" 
+					android:inputType="time"/>
 
 		</LinearLayout>
 	</ScrollView>

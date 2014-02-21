@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.view.Menu;
 import android.view.View;
 
 import android.widget.EditText;
@@ -14,30 +15,30 @@ public class AddEvent extends Activity {
 
 	EditText text_eventname;
 	EditText text_eventlocation;
-	EditText datePicker1;
-	EditText timePicker1;
+	EditText text_eventdate;
+	EditText text_eventtime;
 
 	CalenderDB calenderdb = new CalenderDB(this);
 	
-	public void onCreate(Bundle savedInstanceState) {
-
-		// Get saved data if there is any
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
-
-		// Designate that add_new_contact.xml is the interface used
-		
 		setContentView(R.layout.activity_add_event);
-
-		// Initialize the EditText objects
 		
 		text_eventname = (EditText) findViewById(R.id.text_eventname);
 		text_eventlocation = (EditText) findViewById(R.id.text_eventlocation);
-		datePicker1 = (EditText) findViewById(R.id.datePicker1);
-		timePicker1 = (EditText) findViewById(R.id.timePicker1);
+		text_eventdate = (EditText) findViewById(R.id.text_eventdate);
+		text_eventtime = (EditText) findViewById(R.id.text_eventtime);
 		
 	}
 	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.smart_calender, menu);
+		return true;
+	}
 
 	
 	public void addNewEvent(View view) {
@@ -50,8 +51,8 @@ public class AddEvent extends Activity {
 		
 		queryValuesMap.put("text_eventname", text_eventname.getText().toString());
 		queryValuesMap.put("text_eventlocation", text_eventlocation.getText().toString());
-		queryValuesMap.put("datePicker1", datePicker1.getText().toString());
-		queryValuesMap.put("timePicker1", timePicker1.getText().toString());
+		queryValuesMap.put("text_eventdate", text_eventdate.getText().toString());
+		queryValuesMap.put("text_eventtime", text_eventtime.getText().toString());
 
 		// Call for the HashMap to be added to the database
 		

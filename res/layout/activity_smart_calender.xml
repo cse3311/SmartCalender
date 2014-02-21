@@ -8,24 +8,58 @@
 		android:layout_height="wrap_content"
 		android:layout_alignParentBottom="true"
 		android:orientation="horizontal"
-		android:background="#656565"
-		android:padding="5dp">
+		android:background="#000000"
+		android:padding="7dp">
 
-		<Button
-		    android:id="@+id/cancel_event_btn"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_weight="2"
-		    android:text="@string/event_cancel_button" />
-
-		
-		<Button
-		    android:id="@+id/add_event_btn"
+	    
+	    <Button
+		    android:id="@+id/new_event_btn"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:onClick="showAddEvent"
 		    android:layout_weight="2"
-		    android:text="@string/event_add_button" />
+		    android:background="@drawable/ic_action_new" />
+	    
+		
+		<Button
+		    android:id="@+id/list_event_btn"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    
+		    android:layout_weight="2"
+		    android:background="@drawable/ic_action_paste" />
+		
+		<Button
+		    android:id="@+id/edit_event_btn"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    
+		    android:layout_weight="2"
+		    android:background="@drawable/ic_action_edit" />
+		
+		<Button
+		    android:id="@+id/refresh_event_btn"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    
+		    android:layout_weight="2"
+		    android:background="@drawable/ic_action_refresh" />
+		
+		<Button
+		    android:id="@+id/direct_event_btn"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="2"
+		    android:background="@drawable/ic_action_directions" />
+		
+		
+		<Button
+		    android:id="@+id/share_event_btn"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:onClick="showCurDate"
+		    android:layout_weight="1"
+		    android:background="@drawable/ic_action_share" />
 
 	</LinearLayout>
 	
