@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
@@ -41,6 +42,7 @@ public class ListEvent extends ListActivity {
 			
 			
 			ListView listView = getListView();
+			Log.d("eventList", "Value: " + eventList.get(eventList.size()-1));
 			listView.setOnItemClickListener(new OnItemClickListener() {
 				
 				public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
@@ -64,7 +66,7 @@ public class ListEvent extends ListActivity {
 			
 		
 			
-			ListAdapter adapter = new SimpleAdapter( ListEvent.this,eventList, R.layout.activity_add_event, new String[] { "eventID","text_eventname", "text_eventdate"}, new int[] {R.id.eventID, R.id.text_eventname, R.id.text_eventdate});
+			ListAdapter adapter = new SimpleAdapter( ListEvent.this,eventList, R.layout.activity_add_event, new String[] { "eventId","text_eventname", "text_eventdate"}, new int[] {R.id.eventID, R.id.text_eventname, R.id.text_eventdate});
 			
 			setListAdapter(adapter);
 		}

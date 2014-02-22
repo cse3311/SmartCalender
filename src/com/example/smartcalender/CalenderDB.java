@@ -6,8 +6,10 @@ import java.util.HashMap;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 import android.widget.Toast;
 
 
@@ -52,11 +54,14 @@ public class CalenderDB extends SQLiteOpenHelper{
 			
 			ContentValues values = new ContentValues();
 			
-			values.put("eventName", queryValues.get("eventName"));
-			values.put("location", queryValues.get("location"));
-			values.put("date", queryValues.get("date"));
-			values.put("time", queryValues.get("time"));
 			
+			values.put("eventName", queryValues.get("text_eventname"));
+			values.put("location", queryValues.get("text_eventlocation"));
+			values.put("date", queryValues.get("text_eventdate"));
+			values.put("time", queryValues.get("text_eventtime"));
+			
+			
+			    
 			// Inserts the data in the form of ContentValues into the
 			// table name provided
 			
@@ -79,10 +84,10 @@ public class CalenderDB extends SQLiteOpenHelper{
 			
 		    ContentValues values = new ContentValues();
 		    
-		    values.put("eventName", queryValues.get("eventName"));
-			values.put("location", queryValues.get("location"));
-			values.put("date", queryValues.get("date"));
-			values.put("time", queryValues.get("time"));
+		    values.put("eventName", queryValues.get("text_eventname"));
+			values.put("location", queryValues.get("text_eventlocation"));
+			values.put("date", queryValues.get("text_eventdate"));
+			values.put("time", queryValues.get("text_eventtime"));
 		    
 			// update(TableName, ContentValueForTable, WhereClause, ArgumentForWhereClause)
 			
@@ -107,47 +112,33 @@ public class CalenderDB extends SQLiteOpenHelper{
 		
 		public ArrayList<HashMap<String, String>> getAllEvents() {
 			
-			// ArrayList that contains every row in the database
-			// and each row key / value stored in a HashMap
-			
+		
 			ArrayList<HashMap<String, String>> eventArrayList;
 			
 			eventArrayList = new ArrayList<HashMap<String, String>>();
 			
-			String selectQuery = "SELECT  * FROM events ORDER by date";
+			String selectQuery = "SELECT  * FROM events";
 			
-			// Open a database for reading and writing
-			
+		
 		    SQLiteDatabase database = this.getWritableDatabase();
-		    
-		    // Cursor provides read and write access for the 
-		    // data returned from a database query
-		    
-		    // rawQuery executes the query and returns the result as a Cursor
-		    
+		   
 		    Cursor cursor = database.rawQuery(selectQuery, null);	
-		    
-		    // Move to the first row
-		    
+		
 		    if (cursor.moveToFirst()) {
 		        do {
-		        	HashMap<String, String> contactMap = new HashMap<String, String>();
+		        	HashMap<String, String> eventMap = new HashMap<String, String>();
 		        	
-		        	// Store the key / value pairs in a HashMap
-		        	// Access the Cursor data by index that is in the same order
-		        	// as used when creating the table
+		        	eventMap.put("eventId", cursor.getString(0));
+		        	eventMap.put("eventName", cursor.getString(1));
+		        	eventMap.put("location", cursor.getString(2));
+		        	eventMap.put("date", cursor.getString(3));
+		        	eventMap.put("time", cursor.getString(4));
 		        	
-		        	contactMap.put("eventId", cursor.getString(0));
-		        	contactMap.put("eventName", cursor.getString(1));
-		        	contactMap.put("location", cursor.getString(2));
-		        	contactMap.put("date", cursor.getString(3));
-		        	contactMap.put("time", cursor.getString(4));
-		        	
-		        	eventArrayList.add(contactMap);
+		        	eventArrayList.add(eventMap);
 		        } while (cursor.moveToNext()); // Move Cursor to the next row
 		    }
 		 
-		    // return contact list
+
 		    return eventArrayList;
 		}
 		
@@ -166,10 +157,10 @@ public class CalenderDB extends SQLiteOpenHelper{
 			if (cursor.moveToFirst()) {
 		        do {
 						
-		        	eventMap.put("firstName", cursor.getString(1));
-		        	eventMap.put("lastName", cursor.getString(2));
-		        	eventMap.put("phoneNumber", cursor.getString(3));
-		        	eventMap.put("emailAddress", cursor.getString(4));
+		        	eventMap.put("eventName", cursor.getString(1));
+		        	eventMap.put("location", cursor.getString(2));
+		        	eventMap.put("date", cursor.getString(3));
+		        	eventMap.put("time", cursor.getString(4));
 					   
 		        } while (cursor.moveToNext());
 		    }				    
