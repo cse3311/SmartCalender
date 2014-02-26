@@ -1,6 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent"
-	android:layout_height="fill_parent">
+	android:layout_height="fill_parent"
+	android:screenOrientation="portrait">
 	<LinearLayout
 		android:id="@+id/buttons"
 		android:layout_width="fill_parent"
@@ -15,12 +16,6 @@
 				    android:layout_height="wrap_content"
 				    android:visibility="gone" />
 
-		<Button
-		    android:id="@+id/button_cancel"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_weight="2"
-		    android:text="@string/event_cancel_button" />
 
 		<Button
 		    android:id="@+id/button_save"

@@ -3,6 +3,7 @@ package com.example.smartcalender;
 import java.util.Calendar;
 
 import android.os.Bundle;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
@@ -16,6 +17,7 @@ public class SmartCalender extends Activity {
 
 	CalendarView cal;
 	
+	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -32,7 +34,7 @@ public class SmartCalender extends Activity {
 			
 			Toast.makeText(getBaseContext(),"Selected Date is\n\n"
 				+dayOfMonth+" : "+month+" : "+year , 
-				Toast.LENGTH_LONG).show();
+				Toast.LENGTH_SHORT).show();
 		}
 	});
 	}
@@ -58,7 +60,7 @@ public class SmartCalender extends Activity {
 	
 	public void showCurDate(View view) {
 		Calendar caltoday = Calendar.getInstance();
-		Toast.makeText(getBaseContext(), caltoday.getTime().toString(), Toast.LENGTH_LONG).show();
+		Toast.makeText(getBaseContext(), caltoday.getTime().toString(), Toast.LENGTH_SHORT).show();
 	}
 
 

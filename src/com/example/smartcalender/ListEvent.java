@@ -24,7 +24,6 @@ import android.widget.TextView;
 
 public class ListEvent extends ListActivity {
 
-	
 	Intent intent;
 	TextView eventId;
 	
@@ -42,7 +41,7 @@ public class ListEvent extends ListActivity {
 			
 			
 			ListView listView = getListView();
-			Log.d("eventList", "Value: " + eventList.get(eventList.size()-1));
+			Log.d("eventList_listevent.hva", "Value: " + eventList.get(eventList.size()-1));
 			listView.setOnItemClickListener(new OnItemClickListener() {
 				
 				public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
@@ -66,7 +65,8 @@ public class ListEvent extends ListActivity {
 			
 		
 			
-			ListAdapter adapter = new SimpleAdapter( ListEvent.this,eventList, R.layout.activity_add_event, new String[] { "eventId","text_eventname", "text_eventdate"}, new int[] {R.id.eventID, R.id.text_eventname, R.id.text_eventdate});
+			ListAdapter adapter = new SimpleAdapter( ListEvent.this,eventList, R.layout.activity_list_event, new String[] { "eventId","eventName", "eventlocation", "time", "date"},
+					new int[] {R.id.eventID, R.id.text_eventname, R.id.text_eventlocation, R.id.text_eventtime, R.id.text_eventdate});
 			
 			setListAdapter(adapter);
 		}
