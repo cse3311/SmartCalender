@@ -11,7 +11,7 @@
 		android:background="#656565"
 		android:padding="5dp">
 		
-	    <TextView  android:id="@+id/eventID"
+	    <TextView  android:id="@+id/eventId"
 				    android:layout_width="fill_parent"
 				    android:layout_height="wrap_content"
 				    android:visibility="gone" />

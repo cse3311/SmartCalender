@@ -32,23 +32,23 @@ public final class R {
         public static final int ic_launcher=0x7f020007;
     }
     public static final class id {
-        public static final int EventsListView=0x7f08000a;
+        public static final int EventsListView=0x7f08000b;
         public static final int action_new_event=0x7f080013;
         public static final int action_settings=0x7f080014;
-        public static final int button1=0x7f08000b;
-        public static final int button_delete=0x7f080008;
+        public static final int button1=0x7f08000c;
+        public static final int button_delete=0x7f080009;
         public static final int button_save=0x7f080002;
         public static final int buttons=0x7f080000;
-        public static final int calendarView1=0x7f08000f;
-        public static final int eventID=0x7f080001;
-        public static final int eventId=0x7f080010;
+        public static final int calendarView1=0x7f080010;
+        public static final int eventID=0x7f080008;
+        public static final int eventId=0x7f080001;
         public static final int eventName=0x7f080011;
         public static final int eventdate=0x7f080005;
-        public static final int list_event_btn=0x7f08000e;
-        public static final int location=0x7f080012;
-        public static final int new_event_btn=0x7f08000d;
-        public static final int tableRow1=0x7f080009;
-        public static final int tableRow2=0x7f08000c;
+        public static final int eventlocation=0x7f080012;
+        public static final int list_event_btn=0x7f08000f;
+        public static final int new_event_btn=0x7f08000e;
+        public static final int tableRow1=0x7f08000a;
+        public static final int tableRow2=0x7f08000d;
         public static final int text_eventdate=0x7f080006;
         public static final int text_eventlocation=0x7f080004;
         public static final int text_eventname=0x7f080003;

@@ -19,7 +19,7 @@
         android:textStyle="bold"/>
     
     <TextView
-        android:id="@+id/location"
+        android:id="@+id/eventlocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="@dimen/padding_5dp" 

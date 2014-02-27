@@ -47,7 +47,7 @@ public class ListEvent extends ListActivity {
 				public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
 					
 					
-					eventId = (TextView) view.findViewById(R.id.eventID);
+					eventId = (TextView) view.findViewById(R.id.eventId);
 					
 					
 					String eventIdValue = eventId.getText().toString();	
@@ -65,8 +65,10 @@ public class ListEvent extends ListActivity {
 			
 		
 			
-			ListAdapter adapter = new SimpleAdapter( ListEvent.this,eventArrayList, R.layout.event_list, new String[] { "eventId","eventName", "location"},
-					new int[] {R.id.eventID, R.id.text_eventname, R.id.text_eventlocation});
+			ListAdapter adapter = 
+					new SimpleAdapter( ListEvent.this,eventArrayList, R.layout.event_list, 
+					new String[] { "eventId","eventName", "location"},
+					new int[] {R.id.eventId, R.id.text_eventname, R.id.text_eventlocation});
 			
 			setListAdapter(adapter);
 		}
@@ -83,7 +85,7 @@ public class ListEvent extends ListActivity {
 	}
 	
 	public void showAddEvent(View view) {
-		Intent theIntent = new Intent(getApplicationContext(), EditEvent.class);
+		Intent theIntent = new Intent(getApplicationContext(), AddEvent.class);
 		startActivity(theIntent);
 	}
 	

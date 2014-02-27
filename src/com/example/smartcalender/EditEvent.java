@@ -15,6 +15,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class EditEvent extends Activity{
 	
@@ -70,6 +71,8 @@ public class EditEvent extends Activity{
 		queryValuesMap.put("text_eventtime", text_eventtime.getText().toString());
 		
 		calenderdb.updateEvents(queryValuesMap);
+		
+		Toast.makeText(getApplicationContext(), "Event Edited Succesfully", Toast.LENGTH_SHORT).show();
 		this.callMainActivity(view);
 		
 	}
@@ -81,6 +84,8 @@ public class EditEvent extends Activity{
 		String eventId = theIntent.getStringExtra("eventId");
 		
 		calenderdb.deleteEvent(eventId);
+		
+		Toast.makeText(getApplicationContext(), "Event Deleted Succesfully", Toast.LENGTH_SHORT).show();
 		
 		this.callMainActivity(view);
 		
