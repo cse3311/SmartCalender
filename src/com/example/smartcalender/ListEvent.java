@@ -35,13 +35,13 @@ public class ListEvent extends ListActivity {
 		setContentView(R.layout.activity_list_event);
 		setTitle("List Event");
 		
-		ArrayList<HashMap<String, String>> eventList =  calenderdb.getAllEvents();
+		ArrayList<HashMap<String, String>> eventArrayList =  calenderdb.getAllEvents();
 		
-		if(eventList.size()!=0) {
+		if(eventArrayList.size()!=0) {
 			
 			
 			ListView listView = getListView();
-			Log.d("eventList_listevent.hva", "Value: " + eventList.get(eventList.size()-1));
+			Log.d("eventList_listevent.hva", "Value: " + eventArrayList.get(eventArrayList.size()-1));
 			listView.setOnItemClickListener(new OnItemClickListener() {
 				
 				public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
@@ -65,8 +65,8 @@ public class ListEvent extends ListActivity {
 			
 		
 			
-			ListAdapter adapter = new SimpleAdapter( ListEvent.this,eventList, R.layout.activity_list_event, new String[] { "eventId","eventName", "eventlocation", "time", "date"},
-					new int[] {R.id.eventID, R.id.text_eventname, R.id.text_eventlocation, R.id.text_eventtime, R.id.text_eventdate});
+			ListAdapter adapter = new SimpleAdapter( ListEvent.this,eventArrayList, R.layout.event_list, new String[] { "eventId","eventName", "location"},
+					new int[] {R.id.eventID, R.id.text_eventname, R.id.text_eventlocation});
 			
 			setListAdapter(adapter);
 		}
@@ -83,7 +83,9 @@ public class ListEvent extends ListActivity {
 	}
 	
 	public void showAddEvent(View view) {
-		Intent theIntent = new Intent(getApplicationContext(), AddEvent.class);
+		Intent theIntent = new Intent(getApplicationContext(), EditEvent.class);
 		startActivity(theIntent);
 	}
+	
+	
 }

@@ -69,6 +69,7 @@ public class CalenderDB extends SQLiteOpenHelper{
 			
 			// Release the reference to the SQLiteDatabase object
 			
+			
 			database.close();
 		}
 		

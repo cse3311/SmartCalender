@@ -1,17 +1,17 @@
-<LinearLayout android:id="@+id/main"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_height="fill_parent"
-    android:layout_width="fill_parent">
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListEvent" >
     
-<!--      <TableRow
+    <TableRow
 	    android:id="@+id/tableRow1"
         android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    android:background="#000000" >
 
         <TextView
-            android:id="@+id/contactsTitleTextView"
+            android:id="@+id/EventsListView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
@@ -24,20 +24,20 @@
             android:id="@+id/button1"
             android:background="#444444"
             android:onClick="showAddEvent"
-            android:text="@string/event_add_button"
+            android:text="@string/action_new"
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
-        
      </TableRow>
--->     
-    
+     <TableRow
+	    android:id="@+id/tableRow2"
+        android:layout_width="match_parent"
+	    android:layout_height="wrap_content" >
     <ListView
          android:id="@android:id/list"
          android:layout_width="match_parent"
-         android:layout_height="fill_parent"
+         android:layout_height="wrap_content"
          android:layout_weight="1">
      </ListView>
-     
+     </TableRow>
 
-
-</LinearLayout>
+</TableLayout>

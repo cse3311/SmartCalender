@@ -22,6 +22,8 @@
     <string name="event_date">Event Date: </string>
     <string name="event_location">Event Location: </string>
     <string name="event_add_button">Add Event</string>
+    <string name="event_save_button">Save</string>
+    <string name="event_delete_button">Delete</string>
     <string name="event_cancel_button">Cancel</string>
     <string name="event_deleted">Event Deleted Successfully</string>
     <string name="event_added">Event Added Successfully</string>
