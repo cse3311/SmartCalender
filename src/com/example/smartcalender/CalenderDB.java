@@ -27,7 +27,7 @@ public class CalenderDB extends SQLiteOpenHelper{
 		public void onCreate(SQLiteDatabase database) {
 
 			String query = "CREATE TABLE events ( eventId INTEGER PRIMARY KEY, eventName TEXT, " +
-					"location TEXT, date TEXT, time TEXT)";
+					"location TEXT, date DATE, time TIME)";
 			
 			 database.execSQL(query);
 		}
