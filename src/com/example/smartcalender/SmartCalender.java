@@ -15,6 +15,7 @@ import android.os.Handler;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,6 +24,7 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.CalendarView;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -40,6 +42,13 @@ public class SmartCalender extends Activity {
 	public ArrayList<String> items; // container to store calendar items which
 									// needs showing the event marker
 
+	
+	ArrayList<String> event;
+	LinearLayout rLayout;
+	ArrayList<String> date;
+	ArrayList<String> desc;
+	
+	
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_smart_calender);
@@ -166,6 +175,18 @@ public class SmartCalender extends Activity {
 				items.add("2012-11-30");
 				items.add("2012-11-28");
 			}
+			
+			// Print dates of the current week
+						
+						event = Utility.readCalendarEvent(SmartCalender.this);
+						Log.d("=====Event====", event.toString());
+						Log.d("=====Date ARRAY====", Utility.startDates.toString());
+
+						for (int i = 0; i < Utility.startDates.size(); i++) {
+							itemvalue = df.format(itemmonth.getTime());
+							itemmonth.add(GregorianCalendar.DATE, 1);
+							items.add(Utility.startDates.get(i).toString());
+						}
 
 			adapter.setItems(items);
 			adapter.notifyDataSetChanged();
@@ -178,6 +199,26 @@ public class SmartCalender extends Activity {
 		getMenuInflater().inflate(R.menu.smart_calender, menu);
 		return true;
 	}
+	
+	 @Override
+	    public boolean onOptionsItemSelected(MenuItem item) {
+	        
+	        // Handle action buttons
+	        switch(item.getItemId()) {
+	        
+	        	case R.id.action_new_event:
+		        	Intent intent1 = new Intent( getBaseContext() , AddEvent.class);
+					startActivity(intent1);
+		        	break;
+	        	case R.id.action_home:
+	        		Intent intent2 = new Intent( getBaseContext() , SmartCalender.class);
+					startActivity(intent2);
+		        	break;
+	
+	        }
+	        //default always happens
+	        return super.onOptionsItemSelected(item);
+	    }
 	
 	public void showAddEvent(View view) {
 		

@@ -14,6 +14,7 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -88,6 +89,26 @@ public class ListEvent extends ListActivity {
 		Intent theIntent = new Intent(getApplicationContext(), AddEvent.class);
 		startActivity(theIntent);
 	}
+	
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        
+        // Handle action buttons
+        switch(item.getItemId()) {
+        
+        	case R.id.action_new_event:
+	        	Intent intent1 = new Intent( getBaseContext() , AddEvent.class);
+				startActivity(intent1);
+	        	break;
+        	case R.id.action_home:
+        		Intent intent2 = new Intent( getBaseContext() , SmartCalender.class);
+				startActivity(intent2);
+	        	break;
+
+        }
+        //default always happens
+        return super.onOptionsItemSelected(item);
+    }
 	
 	
 }
