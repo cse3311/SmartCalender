@@ -68,34 +68,7 @@
     
 
 </LinearLayout>
-<LinearLayout
-		android:id="@+id/buttons"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:layout_alignParentBottom="true"
-		android:orientation="horizontal"
-		android:background="#000000"
-		android:padding="7dp">
 
-	    
-	    <Button
-		    android:id="@+id/new_event_btn"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:onClick="showAddEvent"
-		    android:layout_weight="1"
-		    android:text="@string/action_new" />
-	    
-		
-		<Button
-		    android:id="@+id/list_event_btn"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:onClick="showListEvent"
-		    android:layout_weight="1"
-		   android:text="@string/action_list"  />
-		
-	</LinearLayout>
 	
 	
 
