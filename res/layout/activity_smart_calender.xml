@@ -69,6 +69,22 @@
 
 </LinearLayout>
 
+	<LinearLayout 
+        android:id="@+id/text"
+        android:layout_below="@+id/gridview"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        	<!-- <TextView 
+        	    android:id="@+id/tvView"
+        	    android:layout_width="match_parent"
+        	    android:layout_height="wrap_content"
+        	    android:visibility="gone"
+        	    android:text=""/> -->
+    </LinearLayout>
+
 	
 	
 

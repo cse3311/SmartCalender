@@ -8,6 +8,7 @@
     
     <string name="action_home">Home</string>
     <string name="action_new">New</string>
+     <string name="text">text</string>
     <string name="action_list">List</string>
     <string name="action_new_event">Add Event</string>
     <string name="event_decription">Description</string>

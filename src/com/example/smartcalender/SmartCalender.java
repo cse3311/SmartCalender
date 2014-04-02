@@ -15,6 +15,7 @@ import android.os.Handler;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -98,8 +99,7 @@ public class SmartCalender extends Activity {
 				String selectedGridDate = CalendarAdapter.dayString
 						.get(position);
 				String[] separatedTime = selectedGridDate.split("-");
-				String gridvalueString = separatedTime[2].replaceFirst("^0*",
-						"");// taking last part of date. ie; 2 from 2012-12-02.
+				String gridvalueString = separatedTime[2].replaceFirst("^0*","");// taking last part of date. ie; 2 from 2014-03-02.
 				int gridvalue = Integer.parseInt(gridvalueString);
 				// navigate to next or previous month on clicking offdays.
 				if ((gridvalue > 10) && (position < 8)) {
@@ -110,8 +110,16 @@ public class SmartCalender extends Activity {
 					refreshCalendar();
 				}
 				((CalendarAdapter) parent.getAdapter()).setSelected(v);
-
-				showToast(selectedGridDate);
+				
+				for (int i = 0; i < Utility.startDates.size(); i++) {
+					TextView rowTextView = new TextView(SmartCalender.this);
+					if (Utility.startDates.get(i).equals(selectedGridDate)) {
+						Log.d("Event=>", Utility.nameOfEvent.get(i).toString());
+						rowTextView.setText("Event:" + Utility.nameOfEvent.get(i).toString());
+						rowTextView.setTextColor(Color.BLACK);
+					}
+				}
+				
 
 			}
 		});
@@ -168,19 +176,19 @@ public class SmartCalender extends Activity {
 			for (int i = 0; i < 7; i++) {
 				itemvalue = df.format(itemmonth.getTime());
 				itemmonth.add(GregorianCalendar.DATE, 1);
-				items.add("2012-09-12");
-				items.add("2012-10-07");
-				items.add("2012-10-15");
-				items.add("2012-10-20");
-				items.add("2012-11-30");
-				items.add("2012-11-28");
+				items.add("2014-09-12");
+				items.add("2014-03-07");
+				items.add("2014-09-15");
+				items.add("2014-11-20");
+				items.add("2014-01-30");
+				items.add("2014-12-28");
 			}
 			
 			// Print dates of the current week
 						
 						event = Utility.readCalendarEvent(SmartCalender.this);
-						Log.d("=====Event====", event.toString());
-						Log.d("=====Date ARRAY====", Utility.startDates.toString());
+						//Log.d("Event=>", event.toString());
+						//Log.d("Date=>", Utility.startDates.toString());
 
 						for (int i = 0; i < Utility.startDates.size(); i++) {
 							itemvalue = df.format(itemmonth.getTime());
